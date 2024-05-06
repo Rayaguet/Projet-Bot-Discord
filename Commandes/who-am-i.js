@@ -9,11 +9,14 @@ module.exports = {
         const user = interaction.user;
         const guild = interaction.guild;
 
+        const avatarURL = user.displayAvatarURL({ dynamic: true, size: 1024 });
+
         const responseMessage = `
             you are : ${user.username}
             you id is : ${user.id}
-            you avatar is : ${user.avatar}
             this server id is : ${guild.id}
+            you avatar id is : ${user.avatar}
+            Your avatar: ${avatarURL}
         `;
 
         await interaction.reply(responseMessage);
