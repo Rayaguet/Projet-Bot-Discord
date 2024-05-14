@@ -1,5 +1,7 @@
 # Présentation du Vega-Bot
 
+![vegabot](images/vegabot.jpg)
+
 ## Sommaire
 - [I. Conception et SQL](#i-conception-et-sql)
   - [a. MCD](#a-mcd)
