@@ -54,7 +54,7 @@ Concernant la commande /who-am-i, le but est que le bot affiche les infos de l'u
 Certaines commandes du Vega-Bot interagissent directement avec la base de données pour récupérer ou mettre à jour des informations.
 Les commandes réalisées ci-dessous étaient plus complexes que les deux premières en raison de la logique à avoir avec la connexion à la base de données, car il y a tout un travail dans un premier temps d'insertion à la base de données puis de lecture dans cette dernière afin que le bot puisse retranscrire les infos demandées sur le Discord.
 
-![vegabotquibouge](vegabotvideo.gif)
+![vegabotquibouge](images/vegabotvideo.gif)
 
 La commande /show-message a pour but d'afficher un nombre choisi de derniers messages envoyés par un utilisateur du canal.
 
