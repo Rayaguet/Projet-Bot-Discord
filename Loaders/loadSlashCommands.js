@@ -1,34 +1,48 @@
-const Discord = require("discord.js")
-const { REST } = require("@discordjs/rest")
-const { Routes } = require("discord.js")
+const { SlashCommandBuilder, ApplicationCommandOptionType } = require("discord.js");
+const { REST } = require("@discordjs/rest");
+const { Routes } = require("discord-api-types/v9"); 
 
 module.exports = async bot => {
+    let commands = [];
 
-    let commands = []
-
-    bot.commands.forEach(async command => {
-
-        let slashcommand = new Discord.SlashCommandBuilder()
+    bot.commands.forEach(command => {
+        let slashcommand = new SlashCommandBuilder()
             .setName(command.name)
             .setDescription(command.description)
             .setDMPermission(command.dm)
-            .setDefaultMemberPermissions(command.permission == "Aucune" ? null : command.permission)
+            .setDefaultMemberPermissions(command.permission === "Aucune" ? null : command.permission);
 
-            if (command.options?.length >= 1) {
-            for(let i = 0; i < command.options.length; i++) {
-                slashcommand["add"+(command.options[i].type.slice(0, 1).toLowerCase() + command.options[i].type.slice(1))+"Option"](option => option
-                    .setName(command.options[i].name)
-                    .setDescription(command.options[i].description)
-                    .setRequired(command.options[i].required)
-                )
+        if (command.options?.length) {
+            for (let option of command.options) {
+                
+                let method = `add${ApplicationCommandOptionType[option.type]}Option`;
+                if (slashcommand[method]) {
+                    slashcommand[method](opt => opt
+                        .setName(option.name)
+                        .setDescription(option.description)
+                        .setRequired(option.required)
+                    );
+                }
             }
         }
 
-        await commands.push(slashcommand)
-    })
+        commands.push(slashcommand.toJSON()); 
+    });
 
-    const rest = new REST({version: "10"}).setToken(bot.token)
+    const rest = new REST({ version: "9" }).setToken(bot.token);
 
-    await rest.put(Routes.applicationCommands(bot.user.id), { body: commands })
-    console.log("Les slashs commandes sont créées avec succès !")
-}
+    try {
+        await rest.put(
+            Routes.applicationCommands(bot.user.id),
+            { body: commands }
+        );
+        console.log("Les commandes slash sont créées avec succès !");
+    } catch (error) {
+        console.error("Erreur lors de la création des commandes slash :", error);
+    }
+};
+
+
+
+
+
