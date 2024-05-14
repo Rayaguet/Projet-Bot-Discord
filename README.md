@@ -1,4 +1,4 @@
-# Présentation du Vega-Bot
+# Présentation du Vega-Bot🤖
 
 ![vegabot](images/vegabot.jpg)
 
