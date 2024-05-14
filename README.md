@@ -42,11 +42,11 @@ Dans un premier temps le but est que le bot réalise une commande /hey et /who-a
 
 ![hey+who](images/hey_commande.png)
 
-La commande /hey à juste pour objectif d'avoir une repose 'Hey!' de la part du bot.
+La commande /hey a juste pour objectif d'obtenir une réponse 'Hey!' de la part du bot.
 
 ![hey](images/heyslash.png)
 
-Concernant la commande /who-am-i le but est que le bot affiches les infos de l'utilisateur.
+Concernant la commande /who-am-i, le but est que le bot affiche les infos de l'utilisateur.
 
 ![who](images/whoslash.png)
 
