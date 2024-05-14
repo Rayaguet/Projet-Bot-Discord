@@ -38,10 +38,34 @@ Le diagramme de séquence montre l'interaction entre les différentes entités d
 
 ### a. Commandes simples
 Le Vega-Bot inclut plusieurs commandes simples pour interagir avec les utilisateurs sur Discord.
+Dans un premier temps le but est que le bot réalise une commande /hey et /who-am-i.
+
+![hey+who](images/hey_commande.png)
+
+La commande /hey à juste pour objectif d'avoir une repose 'Hey!' de la part du bot.
+
+![hey](images/heyslash.png)
+
+Concernant la commande /who-am-i le but est que le bot affiches les infos de l'utilisateur.
+
+![who](images/whoslash.png)
 
 ### b. Commande en relation avec la base de données
 Certaines commandes du Vega-Bot interagissent directement avec la base de données pour récupérer ou mettre à jour des informations.
+Les commandes réalisées ci-dessous étaient plus complexes que les deux premières en raison de la logique à avoir avec la connexion à la base de données, car il y a tout un travail dans un premier temps d'insertion à la base de données puis de lecture dans cette dernière afin que le bot puisse retranscrire les infos demandées sur le Discord.
+
+La commande /show-message a pour but d'afficher un nombre choisi de derniers messages envoyés par un utilisateur du canal.
+
+![showslash](images/showslash.png)
+
+La commande /show-message-channel a pour but d'afficher un nombre choisi des derniers messages envoyés par tous les utilisateurs d'un canal sélectionné, en fonction de son ID.
+
+![channelslash](images/channelslash.png)
+
+La commande /talk-too-much permet d'afficher le nombre de messages de l'utilisateur ayant été le plus actif, c'est-à-dire celui qui a envoyé le plus de messages dans un canal choisi via son ID.
+
+![talk](images/talkslash.png)
 
 ---
 
-Pour plus de détails techniques et des exemples de commandes, veuillez consulter les sections spécifiques ci-dessus.
+
