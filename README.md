@@ -30,9 +30,9 @@ Le Modèle Physique de Données (MPD) détaille la structure de stockage des don
 ![MPD](images/mpd.png)
 
 ### d. Diagramme de séquence
-Le diagramme de séquence montre l'interaction entre les différentes entités du système au fil du temps.
+Le diagramme de séquence ci dessous nous permet de montrer l'interaction entre les différentes entités du système au fil du temps.
 
-![Diagramme de séquence](images/diagramme_sequence.png)
+![Diagramme de séquence](images/diagramme_sequence.jpg)
 
 ## II. Bot Discord
 
